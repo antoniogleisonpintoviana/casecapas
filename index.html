@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="image/favicon.png">
+        <script src="js/jquery-1.10.2.min.js"></script>
+	    <script src="js/html2canvas.js"></script>	
+        <title>Crie suas capas</title>
+    </head>
+    <body>
+        <header> <img src="https://caseshop.com.br/wp-content/uploads/2019/09/Nova-Logo-1024x276.png"></header>
+        <nav></nav>
+        
+        <iframe src="https://case4you.com.br/capinha-personalizada" height="500" width="1500" title="Crie suas capas"></iframe>
+       
+        <p>
+            <img src="" id="img1" border="0" />
+        </p>
+   
+        <button type="button" id="btnScreenshot">Salvar imagem</button>
+        <script>
+            $(document).ready(function()
+            {
+                $("#btnScreenshot").on('click', function(e)
+                {
+                    html2canvas(document.body, {
+                        taintTest: true,
+                          onrendered: function(canvas) {
+                              $("#img1").attr('src', canvas.toDataURL());
+                            //document.body.appendChild(canvas);
+                          }			
+                      });
+                });	
+            });	
+    
+            
+        </script>
+
+            <footer></footer>
+    </body>
+    </div>
+    </html>
+
+    
